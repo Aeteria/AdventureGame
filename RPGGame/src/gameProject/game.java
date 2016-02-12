@@ -7,7 +7,9 @@ public class game
     private int intOption;
     private String stringOption;
     private String buffer;
-    private ArrayList<item> shopItems = new ArrayList<item>();
+    private ArrayList<item> SwStartItems = new ArrayList<item>();
+    private ArrayList<item> BlStartItems = new ArrayList<item>();
+    private ArrayList<item> DgStartItems = new ArrayList<item>();
     private String[] monsterList = { "Goblin", "Ogre", "Demon", "Ghost", "Golem", "Vampire", "Werewolf", "Zombie"};
     private ArrayList<item> itemDrops = new ArrayList<item>();
     private item item2 = new item("Warhammer", 1, 22, 22, 0);
@@ -17,6 +19,7 @@ public class game
     private item item6 = new item("Mace", 1, 16, 16, 0);
     private item item7 = new item("Iron Sword", 1, 12,12 , 0);
     private item item8 = new item("War Axe", 1, 20, 20, 0);
+    private item item9 = new item("Elvish Dagger", 1, 12, 12, 0);
     int playerDamage = 0;
     int monsterDamage = 0;
 
@@ -27,14 +30,15 @@ public class game
         buffer = "";
         item item1 = new item("Steel Sword", 1, 15, 15 , 0);
         
-        shopItems.add(item1);
-        shopItems.add(item2);
-        itemDrops.add(item3);
-        itemDrops.add(item4);
-        itemDrops.add(item5);
-        itemDrops.add(item6);
-        itemDrops.add(item7);
-        itemDrops.add(item8);
+        SwStartItems.add(item1);
+        BlStartItems.add(item2);
+        BlStartItems.add(item3);
+        DgStartItems.add(item4);
+        SwStartItems.add(item5);
+        BlStartItems.add(item6);
+        SwStartItems.add(item7);
+        BlStartItems.add(item8);
+        DgStartItems.add(item9);
     }
 
     public void goToShop(player x){
@@ -49,15 +53,15 @@ public class game
             buffer = sc.nextLine();
             if(intOption == 1){
                 System.out.println("Choose Sword");
-                for(int i = 0; i < shopItems.size(); i++){
-                    System.out.println(i + ".) " + shopItems.get(i).getName());
+                for(int i = 0; i < SwStartItems.size(); i++){
+                    System.out.println(i+1 + ".) " + SwStartItems.get(i).getName());
                 }
                 intOption = sc.nextInt();
                 buffer = sc.nextLine();
-                x.setMoney(x.getMoney() - shopItems.get(intOption).getValue());
-                x.addItem(shopItems.get(intOption));
+                x.setMoney(x.getMoney() - SwStartItems.get(intOption).getValue());
+                x.addItem(SwStartItems.get(intOption));
             }else if(intOption == 2){
-                System.out.println("What would you like sell?");
+                System.out.println("Choose Blunt Weapon");
                 for(int i = 0; i < x.getInventory().size(); i++){
                     System.out.println(i + ".) " + x.getInventory().get(i).getName());
                 }
