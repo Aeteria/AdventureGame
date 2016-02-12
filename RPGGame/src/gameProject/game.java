@@ -10,13 +10,13 @@ public class game
     private ArrayList<item> shopItems = new ArrayList<item>();
     private String[] monsterList = { "Goblin", "Ogre", "Demon", "Ghost", "Golem", "Vampire", "Werewolf", "Zombie"};
     private ArrayList<item> itemDrops = new ArrayList<item>();
-    private item item2 = new item("Warhammer", 1, 999, 999, 0);
-    private item item3 = new item("Battleaxe", 1, 999, 999, 0);
-    private item item4 = new item("Dagger", 1, 999, 999, 0);
-    private item item5 = new item("Greatsword", 1, 999, 999, 0);
-    private item item6 = new item("Mace", 1, 999, 999, 0);
-    private item item7 = new item("Sword", 1, 999, 999, 0);
-    private item item8 = new item("War Axe", 1, 999, 999, 0);
+    private item item2 = new item("Warhammer", 1, 22, 22, 0);
+    private item item3 = new item("Battleaxe", 1, 19, 19, 0);
+    private item item4 = new item("Dagger", 1, 10, 10, 0);
+    private item item5 = new item("Greatsword", 1, 15, 15, 0);
+    private item item6 = new item("Mace", 1, 16, 16, 0);
+    private item item7 = new item("Iron Sword", 1, 12,12 , 0);
+    private item item8 = new item("War Axe", 1, 20, 20, 0);
     int playerDamage = 0;
     int monsterDamage = 0;
 
@@ -25,9 +25,10 @@ public class game
         intOption = 0;
         stringOption = "";
         buffer = "";
-        item item1 = new item("Godly Sword", 1, 999, 999, 0);
+        item item1 = new item("Steel Sword", 1, 15, 15 , 0);
+        
         shopItems.add(item1);
-        itemDrops.add(item2);
+        shopItems.add(item2);
         itemDrops.add(item3);
         itemDrops.add(item4);
         itemDrops.add(item5);
@@ -37,17 +38,17 @@ public class game
     }
 
     public void goToShop(player x){
-        System.out.println("Welcome to the Shop!");
+        System.out.println("Choose Weapon Class");
         do{
-            System.out.println("What would you like to do?");
-            System.out.println("1.) Buy");
-            System.out.println("2.) Sell");
-            System.out.println("3.) Upgrade");
+           
+            System.out.println("1.) Swords");
+            System.out.println("2.) Axes/Maces");
+            System.out.println("3.) Dagger");
             System.out.println("4.) Go Back");
             intOption = sc.nextInt();
             buffer = sc.nextLine();
             if(intOption == 1){
-                System.out.println("What would you like buy?");
+                System.out.println("Choose Sword");
                 for(int i = 0; i < shopItems.size(); i++){
                     System.out.println(i + ".) " + shopItems.get(i).getName());
                 }
