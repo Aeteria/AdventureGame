@@ -1,6 +1,7 @@
 package gameProject;
 import java.util.*;
 
+
 public class gameRunner
 {
     private static Scanner sc = new Scanner(System.in);
@@ -14,14 +15,15 @@ public class gameRunner
         System.out.println("Welcome the World of Arcadia!");
         System.out.println("What is your name?");
         String name = sc.nextLine();
-        System.out.println("How much health do you have?");
-        int health = sc.nextInt();
+        int health = 100;
+        System.out.println("You have 100 health.");
+        
         player player1 = new player(name, health, 100, 1, 1, 1);
         do{
             System.out.println("What would you like to do?");
-            System.out.println("1.)Shop");
-            System.out.println("2.)Fight Monsters");
-            System.out.println("3.)Fight Floor Boss");
+            System.out.println("1.)Choose Starting Weapon");
+            System.out.println("2.)Choose Starting Spell");
+            System.out.println("3.)Start Game");
             intOption = sc.nextInt();
             buffer = sc.nextLine();
             if(intOption == 1){
