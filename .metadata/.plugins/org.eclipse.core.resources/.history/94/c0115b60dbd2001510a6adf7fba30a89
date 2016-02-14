@@ -10,7 +10,6 @@ public class game
     private ArrayList<item> SwStartItems = new ArrayList<item>();
     private ArrayList<item> BlStartItems = new ArrayList<item>();
     private ArrayList<item> DgStartItems = new ArrayList<item>();
-    private ArrayList<item> SpellStartItems = new ArrayList<item>();
     private String[] monsterList = { "Goblin", "Ogre", "Demon", "Ghost", "Golem", "Vampire", "Werewolf", "Zombie"};
     private ArrayList<item> itemDrops = new ArrayList<item>();
     private item item2 = new item("Warhammer", 1, 22, 22, 0);
@@ -21,12 +20,8 @@ public class game
     private item item7 = new item("Iron Sword", 1, 12,12 , 0);
     private item item8 = new item("War Axe", 1, 20, 20, 0);
     private item item9 = new item("Elvish Dagger", 1, 12, 12, 0);
-    private item item10 = new item("Fireball", 1, 12, 12, 0);
-    private item item11 = new item("Icebolt", 1, 12, 12, 0);
-    private item item12 = new item("Shock", 1, 12, 12, 0);
-    private item item13 = new item("Earth", 1, 12, 12, 0);
-    private int playerDamage = 0;
-    private int monsterDamage = 0;
+    int playerDamage = 0;
+    int monsterDamage = 0;
 
     public game(){
         sc = new Scanner(System.in);
@@ -44,67 +39,8 @@ public class game
         SwStartItems.add(item7);
         BlStartItems.add(item8);
         DgStartItems.add(item9);
-        SpellStartItems.add(item10);
-        SpellStartItems.add(item11);
-        SpellStartItems.add(item12);
-        SpellStartItems.add(item13);
     }
 
-    public void goToStarttingShop(player x){
-        System.out.println("Choose Weapon Class");
-        do{
-           
-            System.out.println("1.) Swords");
-            System.out.println("2.) Axes/Maces");
-            System.out.println("3.) Dagger");
-            System.out.println("4.) Pick a Spell");
-            System.out.println("5.) Go Back");
-            intOption = sc.nextInt();
-            buffer = sc.nextLine();
-            if(intOption == 1){
-                System.out.println("Choose a Sword Weapon");
-                for(int i = 0; i < SwStartItems.size(); i++){
-                    System.out.println(i+1 + ".) " + SwStartItems.get(i).getName());
-                }
-                intOption = sc.nextInt();
-                buffer = sc.nextLine();
-                x.setMoney(x.getMoney() - SwStartItems.get(intOption-1).getValue());
-                x.addItem(SwStartItems.get(intOption-1));
-            }else if(intOption == 2){
-            	System.out.println("Choose a Blunt Weapon");
-                for(int i = 0; i < BlStartItems.size(); i++){
-                    System.out.println(i+1 + ".) " + BlStartItems.get(i).getName());
-                }
-                intOption = sc.nextInt();
-                buffer = sc.nextLine();
-                x.setMoney(x.getMoney() - BlStartItems.get(intOption-1).getValue());
-                x.addItem(BlStartItems.get(intOption-1));
-            }else if(intOption == 3){
-            	System.out.println("Choose a Dagger Weapon");
-                for(int i = 0; i < DgStartItems.size(); i++){
-                    System.out.println(i+1 + ".) " + DgStartItems.get(i).getName());
-                }
-                intOption = sc.nextInt();
-                buffer = sc.nextLine();
-                x.setMoney(x.getMoney() - DgStartItems.get(intOption-1).getValue());
-                x.addItem(DgStartItems.get(intOption-1));
-            }else if(intOption == 4){
-            	System.out.println("Choose a Spell");
-                for(int i = 0; i < SpellStartItems.size(); i++){
-                    System.out.println(i+1 + ".) " + SpellStartItems.get(i).getName());
-                }
-                intOption = sc.nextInt();
-                buffer = sc.nextLine();
-                x.setMoney(x.getMoney() - SpellStartItems.get(intOption-1).getValue());
-                x.addItem(SpellStartItems.get(intOption-1));
-            }else if(intOption == 5){
-                System.out.println("Have a nice day.");
-                buffer = sc.nextLine();
-            }
-            System.out.print('\u000C');
-        }while(intOption != 5);
-    }
-    
     public void goToShop(player x){
         System.out.println("Choose Weapon Class");
         do{
