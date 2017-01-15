@@ -1,20 +1,21 @@
 package gameProject;
-import java.util.*;
 
-public class player
-{
-    private String name;
+import java.util.ArrayList;
+
+public class Entity {
+
+	private String name;
     private int currentHealth;
-    private int MaxHealth;
+    private int maximumHealth;
     private int money;
     private int floor;
     private ArrayList<Item> inventory;
     private int strength;
     private int defence;
-    
-    public player(String iD, int hp, int gold, int fl, int str, int def){
-        currentHealth = hp;
-        MaxHealth = hp;
+
+    public Entity(String iD, int hp, int gold, int fl, int str, int def){
+    	currentHealth = hp;
+    	maximumHealth = hp;
         money = gold;
         name = iD;
         floor = fl;
@@ -22,9 +23,8 @@ public class player
         strength = str;
         defence = def;
     }
-
-    public void setCurrentHealth(int x)
-    {
+    
+    public void setCurrentHealth(int x){
         currentHealth = x;
     }
     
@@ -32,13 +32,13 @@ public class player
         return currentHealth;
     }
     
-    public void setMaxHealth(int x)
+    public void setMaximumHealth(int x)
     {
-        MaxHealth = x;
+    	maximumHealth = x;
     }
     
-    public int getMaxHealth(){
-        return MaxHealth;
+    public int getMaximumHealth(){
+        return maximumHealth;
     }
     
     public void setMoney(int x){

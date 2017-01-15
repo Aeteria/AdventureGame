@@ -9,14 +9,14 @@ public class enemy
     private String name;
     private int currentHealth;
     private int money;
-    private ArrayList<item> inventory;
-    private item weapon;
+    private ArrayList<Item> inventory;
+    private Item weapon;
     
-    public enemy(String iD, int hp, int gold, item w){
+    public enemy(String iD, int hp, int gold, Item w){
         currentHealth = hp;
         money = gold;
         name = iD;
-        inventory = new ArrayList<item>();
+        inventory = new ArrayList<Item>();
         weapon = w;
     }
 
@@ -45,27 +45,27 @@ public class enemy
         return name;
     }
     
-    public void setInventory(ArrayList<item> inv){
+    public void setInventory(ArrayList<Item> inv){
         inventory = inv;
     }
     
-    public ArrayList<item> getInventory(){
+    public ArrayList<Item> getInventory(){
         return inventory;
     }
     
-    public void addItem(item x){
+    public void addItem(Item x){
         inventory.add(x);
     }
     
-    public void removeItem(item x){
+    public void removeItem(Item x){
         inventory.remove(x);
     }
     
-    public void setWeapon(item x){
+    public void setWeapon(Item x){
         weapon = x;
     }
     
-    public item getWeapon(){
+    public Item getWeapon(){
         return weapon;
     }
     
